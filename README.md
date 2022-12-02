@@ -1,78 +1,96 @@
-angular-image-slider
-Slider based on Angular 2+, currently supports Angular 8
+# angular-image-slider
 
-Description
+**Slider based on Angular 2+, currently supports Angular 8**
+
+## Description
+
 This project is my tiny attempt to publish my first node package. I may not continue to support this package. But lets see! Let me know, if you want to have new features. Thanks.
 
-Installation
+## Installation
+
 To install this module to an external project, follow the procedure:
 
-npm install angular-image-slider --save
+1. **npm install angular-image-slider --save**
 
-Add SliderModule and BrowserAnimationsModule import to your @NgModule like example below.
+2. Add **SliderModule** and **BrowserAnimationsModule** import to your **@NgModule** like example below.
 
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgModule } from "@angular/core";
+   ```ts
+   import { BrowserModule } from "@angular/platform-browser";
+   import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+   import { NgModule } from "@angular/core";
 
-import { AppComponent } from "./app.component";
-import { SliderModule } from "angular-image-slider";
+   import { AppComponent } from "./app.component";
+   import { SliderModule } from "angular-image-slider";
 
-@NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, SliderModule],
-  providers: [],
-  bootstrap: [AppComponent],
-})
-export class AppModule {}
-Usage
-You just need to construct a simple array containing image urls.
+   @NgModule({
+     declarations: [AppComponent],
+     imports: [BrowserModule, BrowserAnimationsModule, SliderModule],
+     providers: [],
+     bootstrap: [AppComponent],
+   })
+   export class AppModule {}
+   ```
 
-import { Component } from "@angular/core";
+## Usage
 
-@Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
-})
-export class AppComponent {
-  public imagesUrl;
+1. You just need to construct a simple array containing image urls.
 
-  ngOnInit() {
-    this.imagesUrl = ["IMAGE_URL1.jpg", "IMAGE_URL2.jpg", "IMAGE_URL3.jpg"];
-  }
-}
-Use array as an input for 'images' in the slider component. Array should contain url links:
+   ```ts
+   import { Component } from "@angular/core";
 
-<angular-image-slider [images]="imagesUrl"></angular-image-slider>
-You can configure the slider to auto rotate. You can also decide the autoRotate speed and the direction, as well as number of images that is displayed initially by default.
+   @Component({
+     selector: "app-root",
+     templateUrl: "./app.component.html",
+     styleUrls: ["./app.component.css"],
+   })
+   export class AppComponent {
+     public imagesUrl;
 
-<angular-image-slider
-  [autoRotate]="false"
-  [autoRotateAfter]="0"
-  [autoRotateRight]="false"
-  [imagesToBeDisplayedByDefault]="3"
-  [images]="imagesUrl"
-></angular-image-slider>
+     ngOnInit() {
+       this.imagesUrl = ["IMAGE_URL1.jpg", "IMAGE_URL2.jpg", "IMAGE_URL3.jpg"];
+     }
+   }
+   ```
 
-Demo
-Online demo is here
+2. Use array as an input for 'images' in the slider component. Array should contain url links:
 
-Github:
-https://github.com/ParthivPandya/angular-image-slider-master
+   ```html
+   <angular-image-slider [images]="imagesUrl"></angular-image-slider>
+   ```
 
-Package:
-https://github.com/ParthivPandya/angular-image-slider-master
+3. You can configure the slider to auto rotate. You can also decide the autoRotate speed and the direction, as well as number of images that is displayed initially by default.
 
-License
-License: MIT
-Author
-Author: parthivpandya
-Keywords
-Angular
-Angular2
-Angular 2+
-Image Slider
-Carousel
-Slider
- 
+   ```html
+   <angular-image-slider
+     [autoRotate]="true"
+     [autoRotateAfter]="5000"
+     [autoRotateRight]="true"
+     [imagesToBeDisplayedByDefault]="5"
+     [images]="imagesUrl"
+   ></angular-image-slider>
+   ```
+
+## Github:
+
+https://github.com/parthivpandya/angular-image-slider
+
+## Package:
+
+https://www.npmjs.com/package/angular-image-slider
+
+## License
+
+- License: MIT
+
+## Author
+
+- Author: parthivpandya
+
+## Keywords
+
+- Angular
+- Angular2
+- Angular 2+
+- Image Slider
+- Carousel
+- Slider
